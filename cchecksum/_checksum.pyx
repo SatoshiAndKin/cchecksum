@@ -356,7 +356,9 @@ cdef inline bint is_hex_lower(unsigned char c) noexcept nogil:
     return (48 <= c <= 57) or (97 <= c <= 102)
 
 
-cdef unsigned char* lowercase_ascii_and_validate(bytes src):
+cdef bytes lowercase_ascii_and_validate(bytes src):
+    # Return an owned copy: a pointer into a temporary slice dangles before
+    # the caller can retain it as hex_address_bytes.
     cdef Py_ssize_t src_len, range_start, i
     cdef unsigned char* c_string
     cdef unsigned char c
