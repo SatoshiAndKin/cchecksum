@@ -39,9 +39,9 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.14"
+          python-version: "3.15"
           cache: pip
           cache-dependency-path: |
             pyproject.toml
@@ -57,7 +57,7 @@ jobs:
         run: rm -rf cchecksum
 
       - name: Run CodSpeed
-        uses: CodSpeedHQ/action@v4
+        uses: CodSpeedHQ/action@v5
         env:
           PYTEST_ADDOPTS: "-c benchmarks/pytest.ini"
         with:
