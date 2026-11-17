@@ -7,6 +7,10 @@ on:
       - .github/workflows/**
       - '!.github/workflows/compile.yaml'
 
+concurrency:
+  group: pr-ci-compile.yaml-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pull-requests: write
