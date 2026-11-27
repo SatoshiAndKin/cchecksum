@@ -1,5 +1,6 @@
-from eth_typing import AnyAddress, ChecksumAddress, HexAddress
 from typing import Iterable, List, Union
+
+from eth_typing import AnyAddress, ChecksumAddress, HexAddress
 
 def to_checksum_address(value: Union[AnyAddress, str, bytes]) -> ChecksumAddress:
     """

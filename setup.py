@@ -1,9 +1,10 @@
 import sys
 from pathlib import Path
+
 from setuptools import Extension, find_packages, setup
 from setuptools.command.build_ext import build_ext
 
-classifiers=[
+classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
@@ -18,7 +19,7 @@ classifiers=[
     "Topic :: Software Development :: Libraries",
 ]
 
-with open("requirements.txt", "r") as f:
+with open("requirements.txt") as f:
     requirements = list(map(str.strip, f.read().split("\n")))[:-1]
 
 this_directory = Path(__file__).parent
@@ -68,6 +69,7 @@ class BuildExt(build_ext):
                 extra.append(opt_flag)
             ext.extra_compile_args = extra
         super().build_extensions()
+
 
 if is_metadata_only_command(sys.argv):
     ext_modules = []

@@ -19,4 +19,4 @@ All agents must follow these rules:
 
 For agent tasks, treat CPython `3.9`-`3.14` as supported and use [DISTRIBUTIONS.md](./DISTRIBUTIONS.md) for distribution-level details.
 
-Reference: https://www.conventionalcommits.org/en/v1.0.0/
+Reference: <https://www.conventionalcommits.org/en/v1.0.0/>
