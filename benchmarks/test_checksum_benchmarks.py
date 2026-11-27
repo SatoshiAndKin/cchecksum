@@ -1,7 +1,7 @@
 import pytest
 from pytest_codspeed import BenchmarkFixture
 
-from benchmarks.data import CONTAINER_CASES, CONTAINER_CASE_IDS, SINGLE_CASES, SINGLE_CASE_IDS
+from benchmarks.data import CONTAINER_CASE_IDS, CONTAINER_CASES, SINGLE_CASE_IDS, SINGLE_CASES
 from cchecksum import to_checksum_address
 
 
